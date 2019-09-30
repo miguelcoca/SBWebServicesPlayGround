@@ -20,7 +20,7 @@ public class ToDoService {
         ToDos.add(new ToDo(4,"Angel", "Learn Spring MVC",new Date(),false));
     }
 
-    public List<ToDo> retrieveToDosForUser(String userName) {
+    public List<ToDo> getToDosForUser(String userName) {
         List<ToDo> matchingToDos =  new ArrayList<>();
 
         for(ToDo toDo:ToDos){
@@ -30,6 +30,16 @@ public class ToDoService {
         }
 
         return matchingToDos;
+    }
+
+    public ToDo getToDoForUserWithID(String userName, int ID){
+        for(ToDo toDo: ToDos){
+            if(toDo.getUserName().equals(userName) && toDo.getID()==ID){
+                return toDo;
+            }
+        }
+
+        return null;
     }
 
     public ToDo addToDo(String userName, String description, Date toDoDate, boolean isDone){

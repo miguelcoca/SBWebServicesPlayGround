@@ -16,10 +16,15 @@ public class ToDoController {
     @Autowired
     private ToDoService toDoService;
 
-    @RequestMapping(value = "/users/{name}/todo", method = RequestMethod.GET)
-    public List<ToDo> retrieveToDosForUser(@PathVariable(value = "name") String name){
-        List<ToDo> userToDos = toDoService.retrieveToDosForUser(name);
+    @RequestMapping(value = "/users/{name}/todos", method = RequestMethod.GET)
+    public List<ToDo> getToDosForUser(@PathVariable(value = "name") String name){
+        List<ToDo> userToDos = toDoService.getToDosForUser(name);
 
         return userToDos;
+    }
+
+    @RequestMapping(value = "/users/{name}/todos/{id}", method = RequestMethod.GET)
+    public ToDo getTodoforUserByID(@PathVariable(value = "name") String name, @PathVariable(value = "id") int ID){
+        return toDoService.getToDoForUserWithID(name, ID);
     }
 }
