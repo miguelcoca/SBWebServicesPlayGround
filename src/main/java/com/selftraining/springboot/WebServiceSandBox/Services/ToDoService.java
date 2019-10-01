@@ -20,6 +20,10 @@ static{
         ToDos.add(new ToDo(4,"Angel", "Learn Spring MVC",new Date(),false));
 }
 
+    public List<ToDo> getAllToDos(){
+        return this.ToDos;
+    }
+
     public List<ToDo> getToDosForUser(String userName) {
         List<ToDo> matchingToDos =  new ArrayList<>();
 

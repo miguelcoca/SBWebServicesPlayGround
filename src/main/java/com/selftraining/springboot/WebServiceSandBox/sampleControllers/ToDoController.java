@@ -17,6 +17,11 @@ public class ToDoController {
     @Autowired
     private ToDoService toDoService;
 
+    @RequestMapping(value = "/users/todos")
+    public List<ToDo> getAllToDos(){
+        return toDoService.getAllToDos();
+    }
+
     @RequestMapping(value = "/users/{name}/todos", method = RequestMethod.GET)
     public List<ToDo> getToDosForUser(@PathVariable(value = "name") String name){
         List<ToDo> userToDos = toDoService.getToDosForUser(name);
