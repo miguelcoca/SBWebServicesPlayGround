@@ -13,12 +13,12 @@ public class ToDoService {
     private static List<ToDo> ToDos = new ArrayList<>();
     private static int ToDoCount = 4;
 
-    static{
+static{
         ToDos.add(new ToDo(1,"Miguel", "Learn Spring DI",new Date(),false));
         ToDos.add(new ToDo(2,"Angel", "Learn Hibernate",new Date(),false));
         ToDos.add(new ToDo(3,"Miguel", "Learn JPA",new Date(),false));
         ToDos.add(new ToDo(4,"Angel", "Learn Spring MVC",new Date(),false));
-    }
+}
 
     public List<ToDo> getToDosForUser(String userName) {
         List<ToDo> matchingToDos =  new ArrayList<>();

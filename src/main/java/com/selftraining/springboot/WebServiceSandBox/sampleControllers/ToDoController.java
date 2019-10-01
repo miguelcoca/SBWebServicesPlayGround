@@ -1,5 +1,6 @@
 package com.selftraining.springboot.WebServiceSandBox.sampleControllers;
 
+import com.selftraining.springboot.WebServiceSandBox.CustomException.ToDoNotFoundException;
 import com.selftraining.springboot.WebServiceSandBox.JavaObjects.ToDo;
 import com.selftraining.springboot.WebServiceSandBox.Services.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,12 @@ public class ToDoController {
 
     @RequestMapping(value = "/users/{name}/todos/{id}", method = RequestMethod.GET)
     public ToDo getTodoforUserByID(@PathVariable(value = "name") String name, @PathVariable(value = "id") int ID){
-        return toDoService.getToDoForUserWithID(name, ID);
+        ToDo foundToDo = toDoService.getToDoForUserWithID(name, ID);
+        if(foundToDo == null){
+            throw new ToDoNotFoundException(String.format("ToDo Not Found for user: %s with id: %s",name,String.valueOf(ID)));
+        }
+
+        return foundToDo;
     }
 
     @RequestMapping(value = "/users/{name}/todos", method = RequestMethod.POST)
