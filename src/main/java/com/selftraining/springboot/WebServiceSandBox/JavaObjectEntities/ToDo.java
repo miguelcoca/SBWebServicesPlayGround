@@ -1,4 +1,4 @@
-package com.selftraining.springboot.WebServiceSandBox.JavaObjects;
+package com.selftraining.springboot.WebServiceSandBox.JavaObjectEntities;
 
 import org.springframework.stereotype.Component;
 

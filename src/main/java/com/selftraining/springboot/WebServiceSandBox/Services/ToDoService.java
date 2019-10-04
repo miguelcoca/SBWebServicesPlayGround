@@ -1,6 +1,6 @@
 package com.selftraining.springboot.WebServiceSandBox.Services;
 
-import com.selftraining.springboot.WebServiceSandBox.JavaObjects.ToDo;
+import com.selftraining.springboot.WebServiceSandBox.JavaObjectEntities.ToDo;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

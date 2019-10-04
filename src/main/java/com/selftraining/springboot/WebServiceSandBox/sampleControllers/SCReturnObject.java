@@ -1,7 +1,6 @@
 package com.selftraining.springboot.WebServiceSandBox.sampleControllers;
 
-import com.selftraining.springboot.WebServiceSandBox.JavaObjects.Person;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.selftraining.springboot.WebServiceSandBox.JavaObjectEntities.Person;
 import org.springframework.web.bind.annotation.*;
 
 import static com.selftraining.springboot.WebServiceSandBox.WebServicesSandBoxApplication.person;

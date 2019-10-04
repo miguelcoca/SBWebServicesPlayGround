@@ -1,7 +1,7 @@
 package com.selftraining.springboot.WebServiceSandBox.sampleControllers;
 
 import com.selftraining.springboot.WebServiceSandBox.CustomException.ToDoNotFoundException;
-import com.selftraining.springboot.WebServiceSandBox.JavaObjects.ToDo;
+import com.selftraining.springboot.WebServiceSandBox.JavaObjectEntities.ToDo;
 import com.selftraining.springboot.WebServiceSandBox.Services.ToDoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

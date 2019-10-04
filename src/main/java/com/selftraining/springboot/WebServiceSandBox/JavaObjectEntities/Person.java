@@ -1,4 +1,4 @@
-package com.selftraining.springboot.WebServiceSandBox.JavaObjects;
+package com.selftraining.springboot.WebServiceSandBox.JavaObjectEntities;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
