@@ -5,6 +5,8 @@ import com.selftraining.springboot.WebServiceSandBox.JavaObjectEntities.Customer
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class CustomersService {
 
@@ -15,4 +17,7 @@ public class CustomersService {
         return customerRepository.findAll();
     }
 
+    public Optional<Customer> getCustomerWithID(String id) {
+        return customerRepository.findById(Integer.parseInt(id));
+    }
 }
