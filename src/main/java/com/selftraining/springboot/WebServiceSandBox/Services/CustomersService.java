@@ -14,11 +14,20 @@ public class CustomersService {
     @Autowired
     private ICustomerRepository customerRepository;
 
+    public CustomersService() {
+        super();
+    }
+
     public Iterable<Customer> getAllCustomers(Pageable pageable){
         return customerRepository.findAll(pageable);
     }
 
     public Optional<Customer> getCustomerWithID(String id) {
         return customerRepository.findById(Integer.parseInt(id));
+    }
+
+    public Customer addNewCustomer(Customer customer) {
+        customerRepository.save(customer);
+        return customer;
     }
 }

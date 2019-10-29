@@ -26,7 +26,7 @@ public class Customer {
         super();
     }
 
-    public Customer(int id, String first_name, String last_name, String email, String gender, String telephone, String city, String country) {
+    public Customer(Integer id, String first_name, String last_name, String email, String gender, String telephone, String city, String country) {
         this.id = id;
         this.first_name = first_name;
         this.last_name = last_name;
@@ -51,11 +51,11 @@ public class Customer {
                 '}';
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

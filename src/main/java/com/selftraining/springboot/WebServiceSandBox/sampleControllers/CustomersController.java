@@ -20,6 +20,18 @@ public class CustomersController {
     @Autowired
     private CustomersService customersService;
 
+    @RequestMapping(value = "/addNewCustomer", method = RequestMethod.POST)
+    public ResponseEntity<?> addNewCustomer(@RequestBody Customer customer){
+
+        Customer createdCustomer = customersService.addNewCustomer(customer);
+
+        if(createdCustomer.getId() > 0) {
+            return ResponseEntity.ok(createdCustomer);
+        }
+
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(customer);
+    }
+
     @RequestMapping( value = "/getCustomers", method = RequestMethod.GET)
     public Iterable<Customer> getAllCustomers(@RequestParam(name = "_pageNumber", defaultValue = "0") Integer pageNumber,
                                               @RequestParam(name = "_pageSize", defaultValue = "10") Integer pageSize){
